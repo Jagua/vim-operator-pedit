@@ -1,0 +1,24 @@
+# vim-operator-pedit
+
+**vim-operator-pedit** is a Vim plugin to provide operators to edit a part of a buffer in preview window.
+
+
+This plugin depends on:
+
+* [vim-operator-user](https://github.com/kana/vim-operator-user)
+* [context_filetype.vim](https://github.com/Shougo/context_filetype.vim) (Optional)
+
+Latest: https://github.com/Jagua/vim-operator-pedit
+
+
+
+## Key mappings
+
+**`<Plug>(operator-pedit-edit)`**
+
+operator to edit a part of a buffer in preview window which filetype *is not changed*.
+
+
+**`<Plug>(operator-pedit-edit-contextually)`**
+
+operator to edit a part of a buffer in preview window which filetype is *automatically set contextually*. (require: *context_filetype.vim*)

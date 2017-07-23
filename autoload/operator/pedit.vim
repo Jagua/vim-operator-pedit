@@ -20,7 +20,6 @@ function! s:edit(motion_wise, filetype) abort "{{{
 
   let original_start_pos = getpos('''[')
   let original_end_pos = getpos(''']')
-  let original_bufnr = bufwinnr(bufnr('%'))
 
   let reg = operator#user#register()
   let visual_command = operator#user#visual_command_from_wise_name(a:motion_wise)
@@ -34,14 +33,11 @@ function! s:edit(motion_wise, filetype) abort "{{{
         \ . join(original_start_pos[1 : 2], ',')
         \ . '-'
         \ . join(original_end_pos[1 : 2], ',')
-  execute 'pedit' '`=pedit_bufname`'
+  pedit `=pedit_bufname`
   wincmd P
   execute 'normal!' '"' . reg . 'P'
   setlocal buftype=acwrite nomodified noswapfile
   execute 'setfiletype' target_filetype
-
-  let b:operator_pedit = {}
-  let b:operator_pedit.original_bufnr = original_bufnr
 
   augroup operator-pedit
     autocmd! * <buffer>
@@ -57,9 +53,10 @@ function! s:write() abort "{{{
   let original_selection = &g:selection
   let &g:selection = 'inclusive'
   execute 'normal!' 'gg0vG$"' . operator#user#register() . 'y'
-  execute b:operator_pedit.original_bufnr . 'wincmd w'
+  wincmd p
   execute 'normal!' '`[v`]"' . operator#user#register() . 'p'
   let &g:selection = original_selection
+  wincmd P
 endfunction "}}}
 
 

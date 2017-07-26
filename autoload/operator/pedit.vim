@@ -36,10 +36,10 @@ function! s:edit(motion_wise, filetype) abort "{{{
   pedit `=pedit_bufname`
   wincmd P
   execute 'normal!' '"' . reg . 'P'
-  setlocal buftype=acwrite nomodified noswapfile
   if len(target_filetype) > 0
     execute 'setfiletype' target_filetype
   endif
+  setlocal buftype=acwrite nomodified noswapfile
 
   augroup operator-pedit
     autocmd! * <buffer>

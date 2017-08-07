@@ -1,6 +1,6 @@
 *operator-pedit.txt*  Operator to edit a part of a buffer in |preview-window|
 
-Version: 0.1.0
+Version: 0.1.1
 Author: Jagua
 License: MIT License
 
@@ -63,6 +63,9 @@ set contextually.
 
 ==============================================================================
 CHANGELOG                                           *operator-pedit-changelog*
+
+0.1.1  2017-08-07
+       - Add tests.
 
 0.1.0  2016-11-09
        - Initial version.

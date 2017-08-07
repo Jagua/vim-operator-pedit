@@ -1,0 +1,6 @@
+flavor 'kana/vim-operator-user', branch: 'master'
+flavor 'kana/vim-textobj-user', branch: 'master'
+flavor 'osyo-manga/vim-textobj-context', branch: 'master'
+flavor 'Shougo/context_filetype.vim', branch: 'master'
+
+# vim: filetype=ruby

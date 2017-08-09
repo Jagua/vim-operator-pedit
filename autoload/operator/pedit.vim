@@ -39,7 +39,7 @@ function! s:edit(motion_wise, filetype) abort "{{{
   if len(target_filetype) > 0
     execute 'setfiletype' target_filetype
   endif
-  setlocal buftype=acwrite nomodified noswapfile
+  setlocal bufhidden=wipe buftype=acwrite nomodified noswapfile
 
   augroup operator-pedit
     autocmd! * <buffer>

@@ -57,10 +57,10 @@ describe '<Plug>(operator-pedit-edit) with line {motion}'
 
   it 'reflects back to a original buffer when a buffer in preview window is edited and saved'
     normal jVj;E
-    execute "normal iWhat's Vim?\<CR>"
+    execute "normal jiWhat's Vim?\<CR>"
     update
     pclose!
-    Expect getline(1, '$') ==# insert(copy(g:lines), 'What''s Vim?', 1)
+    Expect getline(1, '$') ==# insert(copy(g:lines), 'What''s Vim?', 2)
   end
 end
 
